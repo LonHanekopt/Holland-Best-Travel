@@ -25,8 +25,8 @@
 
                     <ul class="dropdown-menu">
                         <li class="dropdown-item"><router-link to="/hotels">Hotels</router-link></li>
-                        <li class="dropdown-item"><router-link to="/hostels">Hotsels</router-link></li>
-                        <li class="dropdown-item"><router-link to="/airbnb">AirBnb</router-link></li>
+                        <!-- <li class="dropdown-item"><router-link to="/hostels">Hotsels</router-link></li> -->
+                        <!-- <li class="dropdown-item"><router-link to="/airbnb">AirBnb</router-link></li> -->
                     </ul>
                 </li>
                 <li class="navbar-item">
