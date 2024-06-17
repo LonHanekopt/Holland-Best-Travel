@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <CookiesModal/>
+  <!-- <h1>{{ $t('message') }}</h1> -->
+  <nav><NavView/></nav>
+  <router-view></router-view>
+  <footer><FooterView/></footer>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavView from './components/NavView.vue'
+import FooterView from './components/FooterView.vue'
+import CookiesModal from './components/modals/cookiesModal.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavView,
+    FooterView,
+    CookiesModal
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
