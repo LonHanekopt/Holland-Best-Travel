@@ -141,6 +141,28 @@ export default {
         padding-top: 3rem;
         gap: 2rem;
     }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    .heading h1{
+        font-size: 2.5rem;
+    }
+
+    .grid .text h1{
+        font-size: 2.5rem;
+    }
+
+    .grid .text p {
+        font-size: 1.7rem;
+    }
+
+    .heading p {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 500px) {

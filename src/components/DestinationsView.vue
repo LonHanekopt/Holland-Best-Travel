@@ -109,4 +109,24 @@ export default {
         gap: 1em;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .content .grid {
+        display: grid;
+        grid-template-columns: 1;
+        grid-auto-rows: auto;
+        gap: 1em;
+
+    }
+
+    .content .grid .text h1 {
+        /* margin-top: 1rem; */
+        font-size: 2.3rem;
+    }
+
+    .content .grid .text p {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+    }
+}
 </style>
