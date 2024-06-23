@@ -32,8 +32,15 @@
                 <li class="navbar-item">
                     <RouterLink id="" to="/travel-info">{{ $t('travelinfo') }}</RouterLink>
                 </li>
-                <li class="navbar-item">
-                    <RouterLink id="" to="/contact">{{ $t('contact-us') }}</RouterLink>
+                <li class="navbar-item dropdown">
+                    <a style="display: flex;" @click.prevent>{{ $t('Infomration') }} <span
+                            class="material-symbols-outlined">arrow_drop_down</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><router-link to="/contact">{{ $t('contact-us') }}</router-link></li>
+                        <li class="dropdown-item"><router-link to="/privacy">Privacy</router-link></li>
+                        <li class="dropdown-item"><router-link to="/terms">Terms of Service</router-link></li>
+                        <li class="dropdown-item"><router-link to="/cookie-policy">Cookie Policy</router-link></li>
+                    </ul>
                 </li>
             </ul>
             <div class="locale">
@@ -48,10 +55,10 @@
         </div>
     </div>
 
-    <aside ref="sidemenu">
+    <aside ref="sidemenu" v-show="show">
         <div class="sidemenu">
             <div class="items">
-                <span class="material-symbols-outlined" @click="closeMenu()"> close </span>
+                <span class="material-symbols-outlined" @click.prevent="show = false"> close </span>
                 <ul>
                     <li>
                         <RouterLink id="explore-regions" to="/">{{ $t('Home') }}</RouterLink>
@@ -79,10 +86,16 @@
                         <RouterLink to="/travel-info">{{ $t('travelinfo') }}</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/contact">{{ $t('contact-us') }}</RouterLink>
-                    </li>
-                </ul>
+                        <a style="display: flex;" @click.prevent>{{ $t('Infomration') }} </a>
+                        <div class="indent">
+                    <li><router-link to="/contact">{{ $t('contact-us') }}</router-link></li>
+                    <li><router-link to="/privacy">{{ $t('Privacy') }}</router-link></li>
+                    <li><router-link to="/terms">{{ $t('Terms of Service') }}</router-link></li>
+                    <li><router-link to="/cookie-policy">{{ $t('Cookie Policy') }}</router-link></li>
             </div>
+            </li>
+            </ul>
+        </div>
         </div>
     </aside>
 </template>
@@ -90,6 +103,11 @@
 <script>
 
 export default {
+    data() {
+        return {
+            show: false
+        }
+    },
     mounted() {
         this.$refs['locale'].value = this.$i18n.locale;
     },
@@ -97,11 +115,8 @@ export default {
         changeLang(event) {
             this.$i18n.locale = event.target.value
         },
-        closeMenu() {
-            this.$refs.sidemenu.style['display'] = 'none';
-        },
         showMenu() {
-            this.$refs.sidemenu.style['display'] = 'block';
+            this.show = !this.show;
         }
     }
 }
@@ -109,7 +124,7 @@ export default {
 
 <style scoped>
 aside {
-    display: none;
+    /* display: none; */
 }
 
 aside .sidemenu * {

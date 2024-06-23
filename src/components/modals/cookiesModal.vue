@@ -1,29 +1,29 @@
 <template>
     <div class="modal" v-if="cookiesModalShow">
         <div class="flex container">
-            <h1>{{$t('cookies-h1')}}</h1>
+            <h1>{{ $t('cookies-h1') }}</h1>
             <div class="button">
-                <a href="" class="btn" @click.prevent="cookiesModalShow = false">{{$t('cookies-p')}}</a>
+                <a href="" class="btn" @click.prevent="cookiesModalShow = false">{{ $t('cookies-p') }}</a>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
-        data(){
-            return{
-                cookiesModalShow: false,
-            }
-        },
-        mounted() {
-            this.cookiesModalShow = true;
+export default {
+    data() {
+        return {
+            cookiesModalShow: false,
         }
+    },
+    mounted() {
+        this.cookiesModalShow = true;
     }
+}
 </script>
 
 <style scoped>
-.modal{
+.modal {
     z-index: 100;
     position: fixed;
     bottom: 0;
@@ -34,7 +34,7 @@
     text-transform: capitalize;
 }
 
-.flex{
+.flex {
     height: inherit;
     display: flex;
     align-items: center;
@@ -42,9 +42,30 @@
     gap: 3em;
 }
 
-.flex h1{
+.flex h1 {
     font-size: 1.4rem;
     letter-spacing: 2px;
     font-weight: 300;
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 500px) {
+    .flex h1 {
+        font-size: 1rem;
+    }
+    .flex .btn{
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .flex h1 {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        font-weight: 300;
+    }
 }
 </style>
