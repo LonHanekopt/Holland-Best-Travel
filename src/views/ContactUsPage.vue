@@ -29,8 +29,7 @@
             <p>167 - 169 Great Portland Street, 5th Floor, London, England, W1W 5PF</p>
             <p><b>{{ $t('follow-us') }}</b></p>
             <div class="socials">
-               <div class="elfsight-app-6e57f52d-48b0-4791-b257-73943b891591" data-elfsight-app-lazy></div>
-
+               <div class="elfsight-app-391ae65d-a263-407a-acd8-e65e357685a2" data-elfsight-app-lazy></div>
             </div>
          </div>
       </div>

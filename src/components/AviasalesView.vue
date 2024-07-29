@@ -16,7 +16,12 @@
                         <img src="@/assets/amsterdam.webp" alt="Amsterdam">
                     </div>
                     <div class="aviasales-widget">
-                        <aviasalesWidget :type="2" destination="AMS" origin="LON"></aviasalesWidget>
+                        <div v-if="this.$i18n.locale === 'en'">
+                            <aviasalesWidget :type="2" destination="AMS" origin="LON"></aviasalesWidget>
+                        </div>
+                        <div v-else>
+                            <aviasalesWidget :type="1" origin="RTM"></aviasalesWidget>
+                        </div>
                     </div>
                 </div>
                 <div class="text">
@@ -30,15 +35,20 @@
             <div class="item reverse">
                 <div class="widget">
                     <div class="image">
-                        <img src="@/assets/rotterdam.avif" alt="Amsterdam">
+                        <img src="@/assets/rotterdam.avif" alt="Rotterdam">
                     </div>
                     <div class="aviasales-widget">
-                        <aviasalesWidget :type="2" destination="RTM" origin="lon"></aviasalesWidget>
+                        <div v-if="this.$i18n.locale === 'en'">
+                            <aviasalesWidget :type="2" destination="RTM" origin="FAO"></aviasalesWidget>
+                        </div>
+                        <div v-else>
+                            <aviasalesWidget :type="1" origin="EIN"></aviasalesWidget>
+                        </div>
                     </div>
                 </div>
                 <div class="text">
                     <div class="icon">
-                        <img src="@/assets/rotterdamIcon.png" alt="Amsterdam">
+                        <img src="@/assets/rotterdamIcon.png" alt="Rotterdam">
                     </div>
                     <h1>{{ $t('aviasales-rotterdam-h1') }}</h1>
                     <p>{{ $t('aviasales-rotterdam-p') }}</p>
@@ -50,33 +60,15 @@
                         <img src="@/assets/hague.webp" alt="The Hague">
                     </div>
                     <div class="aviasales-widget">
-                        <aviasalesWidget :type="2" destination="RTM" origin="lon"></aviasalesWidget>
+                        <div v-if="this.$i18n.locale === 'en'">
+                            <aviasalesWidget :type="2" destination="EIN" origin="MAD"></aviasalesWidget>
+                        </div>
+                        <div v-else>
+                            <aviasalesWidget :type="1" origin="AMS"></aviasalesWidget>
+                        </div>
                     </div>
                 </div>
-                <div class="text">
-                    <div class="icon">
-                        <img src="@/assets/hagueIcon.png" alt="Hague">
-                    </div>
-                    <h1>{{ $t('aviasales-hague-h1') }}</h1>
-                    <p>{{ $t('aviasales-hague-p') }}</p>
-                </div>
-            </div>
-            <div class="item reverse">
-                <div class="widget">
-                    <div class="image">
-                        <img src="@/assets/utrecht.webp" alt="Utrecht">
-                    </div>
-                    <div class="aviasales-widget">
-                        <aviasalesWidget :type="2" destination="RTM" origin="Lon"></aviasalesWidget>
-                    </div>
-                </div>
-                <div class="text">
-                    <div class="icon">
-                        <img src="@/assets/utrechtIcon.png" alt="Utrecth">
-                    </div>
-                    <h1>{{ $t('aviasales-utrecht-h1') }}</h1>
-                    <p>{{ $t('aviasales-utrecht-p') }}</p>
-                </div>
+                
             </div>
         </div>
     </div>

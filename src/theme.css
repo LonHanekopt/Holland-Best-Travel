@@ -100,7 +100,6 @@ textarea:focus {
     border: 1px solid rgb(97, 189, 181);
 }
 
-
 .btn {
     color: white;
     background-color: var(--blue);

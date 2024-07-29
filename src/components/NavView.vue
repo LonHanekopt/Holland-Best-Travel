@@ -199,7 +199,7 @@ aside .sidemenu * {
 }
 
 select {
-    border: 1px solid rgb(97, 189, 181);
+    border: 1px solid rgb(97, 189, 181) ;
     padding: 1em 2em;
     border-radius: 5px;
 }

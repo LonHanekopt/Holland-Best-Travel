@@ -1,18 +1,18 @@
 <template>
     <div v-if="type === 1" id="aviasales" ref="aviasales">
-        
+
     </div>
     <div v-if="type === 2" id="aviasales2" ref="aviasales2">
-        
+
     </div>
     <div v-if="type === 3" id="aviasales3" ref="aviasales3">
-        
+
     </div>
     <div v-if="type === 4" id="aviasales4" ref="aviasales4">
-        
+
     </div>
     <div v-if="type === 5" id="aviasales5" ref="aviasales5">
-        
+
     </div>
 </template>
 
@@ -21,12 +21,15 @@ export default {
     props: ['type', 'destination', 'origin'],
     data() {
         return {
+            locale: 'nl',
         }
     },
     mounted() {
+        this.locale = this.$i18n.locale;
+
         if (this.type === 1) {
             const script = document.createElement('script');
-            script.src = 'https://tp.media/content?currency=eur&trs=317751&shmarker=509924&show_hotels=true&powered_by=true&locale=nl&searchUrl=www.aviasales.com%2Fsearch&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&promo_id=7879&campaign_id=100';
+            script.src = `https://tp.media/content?currency=eur&trs=317751&shmarker=509924&show_hotels=true&powered_by=true&locale=nl&searchUrl=www.aviasales.com%2Fsearch&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&origin=${this.origin}&promo_id=7879&campaign_id=100`;
             script.async = true;
             script.charset = 'utf-8';
             this.$refs['aviasales'].appendChild(script);

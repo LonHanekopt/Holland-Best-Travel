@@ -74,8 +74,8 @@ export default {
 }
 
 .content .grid .text {
-    margin: auto;
-    padding: 2em;
+    margin-top: 20px;
+    padding-inline: 10px;
 }
 
 .content .grid .text h1 {
@@ -106,27 +106,39 @@ export default {
     .content .grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-auto-rows: 300px;
-        gap: 1em;
+        row-gap: 3rem;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .content .grid {
-        display: grid;
-        grid-template-columns: 1;
-        grid-auto-rows: auto;
-        gap: 1em;
-
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 300px;
+        row-gap: 3rem;
     }
+}
 
+@media screen and (max-width: 769px) {
     .content .grid .text h1 {
-        /* margin-top: 1rem; */
-        font-size: 2.3rem;
+        font-size: 1.5rem;
     }
 
     .content .grid .text p {
-        margin-top: 2rem;
         font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content .grid{
+        grid-template-columns: auto;
+        grid-auto-rows: auto;
+    }
+    .content .grid .text h1 {
+        font-size: 1.3rem;
+    }
+
+    .content .grid .text p {
+        font-size: 1rem;
     }
 }
 </style>

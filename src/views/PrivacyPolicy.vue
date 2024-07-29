@@ -128,7 +128,7 @@
             </ul>
 
             <h2>{{ $t('terms-flex-102') }}</h2>
-            <p>{{ $t('terms-flex-103') }}</p>
+            <p>{{ $t('terms-flex-103') }}@hollandbesttravel.org</p>
         </div>
 
     </div>
